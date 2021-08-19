@@ -82,27 +82,27 @@ const App = () => {
   return (
     <>
       <Wrapper>
-      <Header />
-      <Drawer anchor='right' open={cartOpen} onClose={() => setCartOpen(false)}>
+        <Header />
+        <Drawer anchor='right' open={cartOpen} onClose={() => setCartOpen(false)}>
 
-        <Cart
-          cartItems={cartItems}
-          addToCart={handleAddToCart}
-          removeFromCart={handleRemoveFromCart}
-        />
-      </Drawer>
-      <StyledButton onClick={() => setCartOpen(true)}>
-       <Badge badgeContent={getTotalItems(cartItems)} color='error'>
-          <ShoppingCartIcon />
-        </Badge>
-      </StyledButton>
-      <Grid container spacing={3}>
-        {data?.map(item => (
-          <Grid item key={item.id} xs={12} sm={4}>
-            <Item item={item} handleAddToCart={ handleAddToCart}/>
-          </Grid>
-        ))}
-      </Grid>
+          <Cart
+            cartItems={cartItems}
+            addToCart={handleAddToCart}
+            removeFromCart={handleRemoveFromCart}
+          />
+        </Drawer>
+        <StyledButton onClick={() => setCartOpen(true)}>
+        <Badge badgeContent={getTotalItems(cartItems)} color='error'>
+            <ShoppingCartIcon />
+          </Badge>
+        </StyledButton>
+        <Grid container spacing={3}>
+          {data?.map(item => (
+            <Grid item key={item.id} xs={12} sm={4}>
+              <Item item={item} handleAddToCart={ handleAddToCart}/>
+            </Grid>
+          ))}
+        </Grid>
     </Wrapper>
     </>
   );
